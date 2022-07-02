@@ -1,0 +1,19 @@
+##### RESULTADOS ITERA��O:0#####
+Qnt. n�s visitados -- BFS: 79 - Dijkstra: 63 - A*: 16
+Custo -- BFS: 42 - Dijkstra: 15 - A*: 15
+
+##### RESULTADOS ITERA��O:0#####
+Qnt. n�s visitados -- BFS: 16 - Dijkstra: 12 - A*: 8
+Custo -- BFS: 21 - Dijkstra: 12 - A*: 12
+
+##### RESULTADOS ITERA��O:0#####
+Qnt. n�s visitados -- BFS: 75 - Dijkstra: 36 - A*: 19
+Custo -- BFS: 10 - Dijkstra: 6 - A*: 6
+
+##### RESULTADOS ITERA��O:0#####
+Qnt. n�s visitados -- BFS: 19 - Dijkstra: 20 - A*: 8
+Custo -- BFS: 11 - Dijkstra: 7 - A*: 7
+
+##### RESULTADOS ITERA��O:0#####
+Qnt. n�s visitados -- BFS: 101 - Dijkstra: 46 - A*: 21
+Custo -- BFS: 19 - Dijkstra: 7 - A*: 7
