@@ -128,16 +128,16 @@ class Adjacencia():
 
     def routineDrawMap(self):
         self.drawMapa()
-        pygame.time.wait(10)
+        pygame.time.wait(300)
         pygame.display.flip()
 
     def rotinaAStarPathStar(self, start, end, color=PURPLE):
         self.drawMapa()
-        pygame.time.wait(50)
+        pygame.time.wait(300)
         print("iniciando A*")
         self.astar(start, end, color)
         pygame.display.flip()
-        pygame.time.wait(50)
+        pygame.time.wait(300)
         print("iniciando pathA*")
         return self.pathStar(start,end)
 
@@ -202,7 +202,7 @@ class Adjacencia():
 
 
     def rotinaExperimentacao(self, start, end, idIteracao):
-        # pygame.time.wait(2000)
+        # pygame.time.wait(3000)
         print('BFS')
         bfs = self.road(start, end)
         pygame.image.save(screen,"greedy_way.jpg")
@@ -218,7 +218,7 @@ class Adjacencia():
         pygame.image.save(screen,"astar_way.jpg")
         # input('ENTER para sair')
         # pygame.quit()
-        # pygame.time.wait(2000)
+        # pygame.time.wait(3000)
         string1 = "##### RESULTADOS ITERAÇÃO:" + str(idIteracao) + "#####"
         string2 = "Qnt. nós visitados -- BFS: " + str(bfs[0]) + " - Dijkstra: "+ str(dij[0]) + " - A*: " + str(ast[0])
         string3 = "Custo -- BFS: " + str(bfs[1])+ " - Dijkstra: "+ str(dij[1]) + " - A*: "+ str(ast[1])
@@ -286,11 +286,6 @@ class Adjacencia():
                             self.qtd_tool5 = 0
 
                     if pos in TOOL1:
-
-                        if self.iteraction and self.contagemIteracoes < 5:
-                            self.rotinaExperimentacao((42*posx + posy), (42*(pos//42) + pos%42), self.contagemIteracoes)
-                            self.contagemIteracoes += 1
-                        else:
                             posx, posy, array_vision = self.findedTool((42*posx + posy), (42*(pos//42) + pos%42))
                             self.qtd_tool1 += 1
                             del TOOL1[TOOL1.index(pos)]
@@ -298,10 +293,6 @@ class Adjacencia():
                             count_tool_in_vision = 0
                             break
                     elif pos in TOOL2:
-                        if self.iteraction and self.contagemIteracoes < 5:
-                            self.rotinaExperimentacao((42*posx + posy), (42*(pos//42) + pos%42), self.contagemIteracoes)
-                            self.contagemIteracoes += 1
-                        else:
                             posx, posy, array_vision = self.findedTool((42*posx + posy), (42*(pos//42) + pos%42))
                             self.qtd_tool2 += 1
                             del TOOL2[TOOL2.index(pos)]
@@ -309,10 +300,6 @@ class Adjacencia():
                             count_tool_in_vision = 0
                             break
                     elif pos in TOOL3:
-                        if self.iteraction and self.contagemIteracoes < 5:
-                            self.rotinaExperimentacao((42*posx + posy), (42*(pos//42) + pos%42), self.contagemIteracoes)
-                            self.contagemIteracoes += 1
-                        else:
                             posx, posy, array_vision = self.findedTool((42*posx + posy), (42*(pos//42) + pos%42))
                             self.qtd_tool3 += 1
                             del TOOL3[TOOL3.index(pos)]
@@ -321,10 +308,6 @@ class Adjacencia():
                             break
 
                     elif pos in TOOL4:
-                        if self.iteraction and self.contagemIteracoes < 5:
-                            self.rotinaExperimentacao((42*posx + posy), (42*(pos//42) + pos%42), self.contagemIteracoes)
-                            self.contagemIteracoes += 1
-                        else:
                             posx, posy, array_vision = self.findedTool((42*posx + posy), (42*(pos//42) + pos%42))
                             self.qtd_tool4 += 1
                             del TOOL4[TOOL4.index(pos)]
@@ -333,10 +316,6 @@ class Adjacencia():
                             break
                 
                     elif pos in TOOL5:
-                        if self.iteraction and self.contagemIteracoes < 5:
-                            self.rotinaExperimentacao((42*posx + posy), (42*(pos//42) + pos%42), self.contagemIteracoes)
-                            self.contagemIteracoes += 1
-                        else:
                             posx, posy, array_vision = self.findedTool((42*posx + posy), (42*(pos//42) + pos%42))
                             self.qtd_tool5 += 1
                             del TOOL5[TOOL5.index(pos)]
@@ -667,7 +646,7 @@ class Adjacencia():
         for item in path[::-1]:
             self.caminho(item, color)
         road = [self.valueCorreto[self.values[x]] for x in path[::-1]]
-        return path, (len(prev), sum(road))
+        return path
 
 # experimentacao()
 adj = Adjacencia(mapa_array)
